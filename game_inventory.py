@@ -1,6 +1,8 @@
 
 #git firts commmit
 
+inventory = {'shotgun':1,'ak47':1, 'knife':1,
+                'pistol':1}
 
 def display_inventory(inventory):
     """Display the contents of the inventory in a simple way."""
