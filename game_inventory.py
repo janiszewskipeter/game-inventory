@@ -1,7 +1,5 @@
 
-# This is the file where you must work.
-# Write code in the functions (and create new functions) so that they work
-# according to the requirements.
+
 
 
 def display_inventory(inventory):
