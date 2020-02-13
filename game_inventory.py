@@ -1,9 +1,6 @@
 
 #git firts commmit
-#adrian to parowka
-#adrian to parowka 2
-#adrian to parowka 3
-#adrian to parowka 5
+
 
 inventory = {'shotgun':1,'ak47':1, 'knife':1,
                 'pistol':1}
