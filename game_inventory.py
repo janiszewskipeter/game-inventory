@@ -1,7 +1,8 @@
-
+import sys
 added_items = {}
 removed_items = {}
-inventory = {'shotgun':1,'ak47':1, 'knife':1, 'pistol':1}
+order = []
+inventory = {'shotgun':2,'ak47':5, 'knife':8, 'pistol':1, 'uzi':5, 'ckm':1}
 
 
 
@@ -38,12 +39,19 @@ def remove_from_inventory(inventory, removed_items):
 
 
 def print_table(inventory, order):
-    pass
-    
+    order = input("What type of order would You like?\n No answer = no order \n desc - descending order \n asc -ascending order\n")
+    OrderedDict = {}
+    if order == "":
+        display_inventory(inventory)
+    elif order == "desc":
+        OrderedDict(sorted(inventory.items(), key=lambda t: t[0]))
+        print(OrderedDict)
+    else:
+        OrderedDict(sorted(inventory.items(), key=lambda t: t[1]))
+        print(OrderedDict)
 
 def import_inventory(inventory, filename):
     """Import new inventory items from a CSV file."""
-
     pass
 
 
@@ -54,7 +62,7 @@ def export_inventory(inventory, filename):
 
 def main():
     print('-'*55)
-    choose = input("Welcome in th game inventory, what would You like to do: \n 1 - Add to inventory \n 2 - Remove from inventory \n 3 - XXXX \n 4 - XXX \n 5 - Quit inventory \n Enter a number: \n")
+    choose = input("Welcome in th game inventory, what would You like to do: \n 1 - Add to inventory \n 2 - Remove from inventory \n 3 - Print by order \n 4 - Import inventory \n 5 - Export inventory \n 6 - Quit inventory \n Enter a number: \n")
     display_inventory(inventory)
     if choose == "1":
         add_to_inventory(inventory, added_items)
@@ -62,12 +70,15 @@ def main():
         remove_from_inventory(inventory, removed_items)
     elif choose == "3":
         print("Inventory by order")
-`   elif choose == "4":
-        print("Fourth option chosen")
+        print_table(inventory, order)
+    elif choose  == "4":
+        print("Import inventory")
     elif choose == "5":
-        
-`
-          
+        print("Export inventory")    
+    elif choose == "6":
+        sys.exit()
+    display_inventory(inventory)
+       
 
 if __name__ == '__main__':
     main()
