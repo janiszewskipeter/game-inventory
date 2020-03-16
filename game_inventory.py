@@ -1,5 +1,4 @@
 
-#git firts commmit
 added_items = {}
 removed_items = {}
 inventory = {'shotgun':1,'ak47':1, 'knife':1, 'pistol':1}
@@ -7,9 +6,11 @@ inventory = {'shotgun':1,'ak47':1, 'knife':1, 'pistol':1}
 
 
 def display_inventory(inventory):
+    print("Your current inventory is: \n")
+    print("_"*55)
     for k, v in inventory.items():
         print("Weapon type: " ,k ,"|","ammo : ", v)
-    
+    print("_"*55)
    
 
 def add_to_inventory(inventory, added_items):
@@ -34,6 +35,8 @@ def remove_from_inventory(inventory, removed_items):
     elif removed_items not in inventory.keys():
         print("No such weapon so far") 
         main()  
+
+
 def print_table(inventory, order):
     pass
     
@@ -51,12 +54,19 @@ def export_inventory(inventory, filename):
 
 def main():
     print('-'*55)
-    choose = input("Welcome in th game inventory, what would You like to do: \n 1 - Add to inventory \n 2 - Remove from inventory \n 3 - XXXX \n 4 - XXX \n 5 - Quit inventory \n Enter a number:")
+    choose = input("Welcome in th game inventory, what would You like to do: \n 1 - Add to inventory \n 2 - Remove from inventory \n 3 - XXXX \n 4 - XXX \n 5 - Quit inventory \n Enter a number: \n")
+    display_inventory(inventory)
     if choose == "1":
         add_to_inventory(inventory, added_items)
     elif choose == "2":
         remove_from_inventory(inventory, removed_items)
     elif choose == "3":
+        print("Inventory by order")
+`   elif choose == "4":
+        print("Fourth option chosen")
+    elif choose == "5":
+        
+`
           
 
 if __name__ == '__main__':
